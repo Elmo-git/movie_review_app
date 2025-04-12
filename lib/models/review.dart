@@ -1,31 +1,31 @@
 class Review {
   final int? id;
-  final String movieId; // Tipe String
+  final int movieId;
   final String content;
-  final DateTime timestamp;
+  final String createdAt;
 
   Review({
     this.id,
     required this.movieId,
     required this.content,
-    required this.timestamp,
+    required this.createdAt,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
-      'movieId': movieId, // Sesuaikan dengan tipe String
-      'comment': content,
-      'timestamp': timestamp.toIso8601String(),
+      'movieId': movieId,
+      'content': content,
+      'createdAt': createdAt,
     };
   }
 
   factory Review.fromMap(Map<String, dynamic> map) {
     return Review(
       id: map['id'],
-      movieId: map['movieId'], // Pastikan menggunakan 'movieId' yang benar
-      content: map['comment'],
-      timestamp: DateTime.parse(map['timestamp']),
+      movieId: map['movieId'],
+      content: map['content'],
+      createdAt: map['createdAt'],
     );
   }
 }
