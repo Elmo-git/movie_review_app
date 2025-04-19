@@ -46,8 +46,8 @@ class ReviewDatabase {
 
     final result = await db.query(
       'reviews',
-      where: 'movieId = ?', // Query berdasarkan movieId
-      whereArgs: [movieId], // Cari berdasarkan movieId yang sesuai
+      where: 'movieId = ?',
+      whereArgs: [movieId],
     );
 
     return result.map((json) => Review.fromMap(json)).toList();

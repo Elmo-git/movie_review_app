@@ -11,7 +11,6 @@ class Movie {
     required this.posterPath,
   });
 
-  // Tambahkan ini:
   factory Movie.fromJson(Map<String, dynamic> json) {
     return Movie(
       id: json['id'],
@@ -21,7 +20,6 @@ class Movie {
     );
   }
 
-  // Ini juga berguna kalau mau simpan ke SQLite:
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -31,7 +29,6 @@ class Movie {
     };
   }
 
-  // Untuk ambil dari database SQLite:
   factory Movie.fromMap(Map<String, dynamic> map) {
     return Movie(
       id: map['id'],
